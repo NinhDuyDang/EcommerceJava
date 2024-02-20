@@ -1,14 +1,14 @@
-import React, { FC, ReactElement } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { LoginOutlined, LogoutOutlined, ShoppingCartOutlined, UserAddOutlined, UserOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
 import { Affix, Badge, Col, Row, Space } from "antd";
+import { FC, ReactElement } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { selectUserFromUserState } from "../../redux-toolkit/user/user-selector";
-import { selectCartItemsCount } from "../../redux-toolkit/cart/cart-selector";
-import { logoutSuccess } from "../../redux-toolkit/user/user-slice";
 import { ACCOUNT, BASE, CONTACTS, LOGIN, MENU, REGISTRATION } from "../../constants/routeConstants";
 import { CART } from "../../constants/urlConstants";
+import { selectCartItemsCount } from "../../redux-toolkit/cart/cart-selector";
+import { selectUserFromUserState } from "../../redux-toolkit/user/user-selector";
+import { logoutSuccess } from "../../redux-toolkit/user/user-slice";
 import "./NavBar.scss";
 
 const NavBar: FC = (): ReactElement => {
