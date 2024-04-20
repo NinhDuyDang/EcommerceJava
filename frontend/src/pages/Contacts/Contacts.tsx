@@ -15,10 +15,10 @@ const Contacts: FC = (): ReactElement => {
         <ContentWrapper>
             <ContentTitle icon={<InfoCircleOutlined />} title={"Contacts"} />
             <Row gutter={32}>
-                <Col span={12}>
+                <Col span={20}>
                     <div>
                         <Typography.Text strong>{"Mobile: "}</Typography.Text>
-                        <Typography.Text>(066) 696-66-23</Typography.Text>
+                        <Typography.Text>(+84) 812-345-568</Typography.Text>
                     </div>
                     <div>
                         <Typography.Text strong>{"E-mail: "}</Typography.Text>
@@ -38,6 +38,12 @@ const Contacts: FC = (): ReactElement => {
                     </div>
                     <div>
                         <Typography.Text>Delivery of orders come through courier service.</Typography.Text>
+                    </div>
+                    <div style={{ marginTop: 16}}>
+                        <Typography.Text strong>Address</Typography.Text>
+                    </div>
+                    <div>
+                        <Typography.Text>150 Lê Thị Hồng Gấm, Phường 6, Thành phố Mỹ Tho, Tiền Giang</Typography.Text>
                     </div>
                 </Col>
             </Row>
