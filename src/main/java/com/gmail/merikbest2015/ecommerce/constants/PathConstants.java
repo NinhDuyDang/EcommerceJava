@@ -50,4 +50,5 @@ public class PathConstants {
     public static final String GRAPHQL_IDS = GRAPHQL + IDS;
     public static final String GRAPHQL_PERFUMES = GRAPHQL + PERFUMES;
     public static final String GRAPHQL_PERFUME = GRAPHQL + "/perfume";
+
 }

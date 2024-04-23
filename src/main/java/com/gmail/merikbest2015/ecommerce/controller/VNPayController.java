@@ -30,7 +30,7 @@ public class VNPayController {
         return "redirect:" + vnpayUrl;
     }
 
-    @GetMapping("/vnpay-payment")
+    @GetMapping("/pay-payment")
     public String GetMapping(HttpServletRequest request, Model model){
         int paymentStatus =vnPayService.orderReturn(request);
 

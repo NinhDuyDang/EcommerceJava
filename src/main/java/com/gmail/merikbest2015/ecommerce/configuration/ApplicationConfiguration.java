@@ -24,6 +24,7 @@ public class ApplicationConfiguration {
     @Value("${amazon.aws.secret-key}")
     private String awsAccessSecret;
 
+
     @Bean
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder(8);
