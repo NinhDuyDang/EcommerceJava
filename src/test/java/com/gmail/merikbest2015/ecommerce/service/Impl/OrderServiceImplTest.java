@@ -19,6 +19,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 import static com.gmail.merikbest2015.ecommerce.util.TestConstants.*;
@@ -78,7 +79,7 @@ public class OrderServiceImplTest {
     }
 
     @Test
-    public void postOrder() {
+    public void postOrder() throws UnsupportedEncodingException {
         Map<Long, Long> perfumesId = new HashMap<>();
         perfumesId.put(1L, 1L);
         perfumesId.put(2L, 1L);

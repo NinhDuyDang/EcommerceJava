@@ -22,7 +22,8 @@ export const mockOrder: OrderResponse = {
     address: "Wall Street1",
     email: "test123@test.com",
     phoneNumber: "1234567890",
-    postIndex: 1234567890
+    postIndex: 1234567890,
+    url:"https://sandbox.vnpayment.vn/paymentv2/Payment/Error.html?code=15"
 };
 
 export const mockOrderItems: Array<OrderItemResponse> = [
@@ -69,7 +70,9 @@ export const mockOrders: Array<OrderResponse> = [
         address: "Wall Street1",
         email: "test123@test.com",
         phoneNumber: "1234567890",
-        postIndex: 1234567890
+        postIndex: 1234567890,
+        url:"https://sandbox.vnpayment.vn/paymentv2/Payment/Error.html?code=15"
+
     },
     {
         id: 2,
@@ -81,7 +84,8 @@ export const mockOrders: Array<OrderResponse> = [
         address: "Wall Street1",
         email: "test123@test.com",
         phoneNumber: "1234567890",
-        postIndex: 1234567890
+        postIndex: 1234567890,
+        url:"https://sandbox.vnpayment.vn/paymentv2/Payment/Error.html?code=15"
     },
     {
         id: 3,
@@ -93,7 +97,8 @@ export const mockOrders: Array<OrderResponse> = [
         address: "Tverskaya street 1",
         email: "ivan123@test.com",
         phoneNumber: "1234567890",
-        postIndex: 1234567890
+        postIndex: 1234567890,
+        url:"https://sandbox.vnpayment.vn/paymentv2/Payment/Error.html?code=15"
     },
     {
         id: 4,
@@ -105,7 +110,8 @@ export const mockOrders: Array<OrderResponse> = [
         address: "Tverskaya street 1",
         email: "ivan123@test.com",
         phoneNumber: "1234567890",
-        postIndex: 1234567890
+        postIndex: 1234567890,
+        url:"https://sandbox.vnpayment.vn/paymentv2/Payment/Error.html?code=15"
     },
     {
         id: 5,
@@ -117,7 +123,8 @@ export const mockOrders: Array<OrderResponse> = [
         address: "Tverskaya street 1",
         email: "ivan123@test.com",
         phoneNumber: "1234567890",
-        postIndex: 1234567890
+        postIndex: 1234567890,
+        url:"https://sandbox.vnpayment.vn/paymentv2/Payment/Error.html?code=15"
     }
 ];
 

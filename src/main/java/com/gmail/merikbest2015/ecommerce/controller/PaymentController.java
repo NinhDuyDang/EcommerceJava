@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.UnsupportedEncodingException;
@@ -20,25 +21,20 @@ public class PaymentController {
 
 
     @GetMapping("/create_payment")
-    public ResponseEntity<?> createPayment(double amount) throws UnsupportedEncodingException {
-
+    public ResponseEntity<?> createPayment(@RequestParam double amount) throws UnsupportedEncodingException {
+        long a = (long) (amount*100);
+        System.out.println("amount: :  " + amount);
         String vnp_TxnRef = Configvnpay.getRandomNumber(8);
         String vnp_IpAddr = "127.0.0.1";
         String orderType = "order-type";
         String vnp_Version = "2.1.0";
         String vnp_Command = "pay";
-
         String vnp_TmnCode = Configvnpay.vnp_TmnCode;
-//
-//         amount = 1000000*100;
-
-//        int amount = Integer.parseInt(req.getParameter("amount")) * 100;
         Map vnp_Params = new HashMap<>();
-        vnp_Params.put("vnp_Version",vnp_Version);
-        vnp_Params.put("vnp_Command", vnp_Command);
-        vnp_Params.put("vnp_TmnCode", vnp_TmnCode);
-        vnp_Params.put("vnp_Amount", String.valueOf(amount));
-        vnp_Params.put("vnp_CurrCode", "USD");
+        vnp_Params.put("vnp_Version", vnp_Version);
+        vnp_Params.put("vnp_Command", vnp_Command);vnp_Params.put("vnp_TmnCode", vnp_TmnCode);
+        vnp_Params.put("vnp_Amount", String.valueOf(a));
+        vnp_Params.put("vnp_CurrCode", "VND");
 //        vnp_Params.put("vnp_BankCode", "Techcombank");
 
 //        String bank_code = req.getParameter("bankcode");
@@ -127,6 +123,7 @@ public class PaymentController {
         paymentRestDTO.getStatus("Ok");
         paymentRestDTO.getMessage("Successfully");
         paymentRestDTO.setURL(paymentUrl);
+        System.out.println("paymentRestDTO " + paymentRestDTO.getURL());
 
         return ResponseEntity.status(HttpStatus.OK).body(paymentRestDTO);
 
@@ -137,5 +134,7 @@ public class PaymentController {
 //        job.addProperty("data", paymentUrl);
 //        Gson gson = new Gson();
 //        resp.getWriter().write(gson.toJson(job));
+
+
     }
 }

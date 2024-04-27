@@ -12,6 +12,8 @@ public class PaymentRestDTO implements Serializable {
     private String message;
     private String URL;
 
+
+
     public String getStatus(String ok) {
         return status;
     }

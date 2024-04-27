@@ -84,6 +84,7 @@ export interface OrderResponse {
     email: string;
     phoneNumber: string;
     postIndex: number;
+    url: string;
 }
 
 export interface OrderItemResponse {

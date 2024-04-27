@@ -5,6 +5,7 @@ import com.gmail.merikbest2015.ecommerce.dto.HeaderResponse;
 import com.gmail.merikbest2015.ecommerce.dto.order.OrderItemResponse;
 import com.gmail.merikbest2015.ecommerce.dto.order.OrderRequest;
 import com.gmail.merikbest2015.ecommerce.dto.order.OrderResponse;
+import com.gmail.merikbest2015.ecommerce.dto.order.OrderResponseWithPayURL;
 import com.gmail.merikbest2015.ecommerce.exception.InputFieldException;
 import com.gmail.merikbest2015.ecommerce.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @Component
@@ -45,11 +47,16 @@ public class OrderMapper {
         return orderService.deleteOrder(orderId);
     }
 
-    public OrderResponse postOrder(OrderRequest orderRequest, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            throw new InputFieldException(bindingResult);
+    public OrderResponse postOrder(OrderRequest orderRequest, BindingResult bindingResult) throws UnsupportedEncodingException {
+        try {
+            if (bindingResult.hasErrors()) {
+                throw new InputFieldException(bindingResult);
+            }
+            OrderResponseWithPayURL order = orderService.postOrder(commonMapper.convertToEntity(orderRequest, Order.class), orderRequest.getPerfumesId());
+            return commonMapper.convertToResponse(order, OrderResponse.class);
+        } catch (UnsupportedEncodingException ex) {
+            System.out.println("Error: " + ex.getMessage());
+            return null;
         }
-        Order order = orderService.postOrder(commonMapper.convertToEntity(orderRequest, Order.class), orderRequest.getPerfumesId());
-        return commonMapper.convertToResponse(order, OrderResponse.class);
     }
 }

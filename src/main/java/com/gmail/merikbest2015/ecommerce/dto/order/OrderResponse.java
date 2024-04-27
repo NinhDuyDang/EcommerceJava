@@ -18,4 +18,5 @@ public class OrderResponse {
     private String email;
     private String phoneNumber;
     private Integer postIndex;
+    private String url;
 }

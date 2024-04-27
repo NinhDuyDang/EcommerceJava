@@ -2,8 +2,10 @@ package com.gmail.merikbest2015.ecommerce.service;
 
 import com.gmail.merikbest2015.ecommerce.domain.Order;
 import com.gmail.merikbest2015.ecommerce.domain.OrderItem;
+import com.gmail.merikbest2015.ecommerce.dto.order.OrderResponseWithPayURL;
 import graphql.schema.DataFetcher;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +22,7 @@ public interface OrderService {
 
     Page<Order> getUserOrders(String email, Pageable pageable);
 
-    Order postOrder(Order validOrder, Map<Long, Long> perfumesId);
+    OrderResponseWithPayURL postOrder(Order validOrder, Map<Long, Long> perfumesId) throws UnsupportedEncodingException;
 
     String deleteOrder(Long orderId);
 

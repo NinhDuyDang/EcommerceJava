@@ -16,6 +16,7 @@ import { addOrder } from "../../redux-toolkit/order/order-thunks";
 import {resetCartState} from "../../redux-toolkit/cart/cart-slice";
 import {fetchCart} from "../../redux-toolkit/cart/cart-thunks";
 import OrderItem from "./OrderItem/OrderItem";
+import axios, {AxiosPromise} from "axios";
 
 interface OrderFormData {
     firstName: string;
@@ -55,6 +56,23 @@ const Order: FC = (): ReactElement => {
             dispatch(resetCartState());
         };
     }, []);
+
+    // const onFormSubmit = (order: OrderFormData): void => {
+    //     const perfumesId = Object.fromEntries(new Map(JSON.parse(localStorage.getItem("perfumes") as string)));
+    //
+    //     dispatch(addOrder({ order: { ...order, perfumesId, totalPrice }, history }))
+    //     return axios({
+    //         method: "POST",
+    //         url: "
+    //         http://localhost:8080/api/payment/create_payment
+    //             ",
+    //         data: { order: { ...order, perfumesId, totalPrice }, history },
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             "Authorization": false,
+    //         }
+    //     });
+    // };
 
     const onFormSubmit = (order: OrderFormData): void => {
         const perfumesId = Object.fromEntries(new Map(JSON.parse(localStorage.getItem("perfumes") as string)));
