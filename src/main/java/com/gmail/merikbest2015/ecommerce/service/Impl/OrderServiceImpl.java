@@ -1,5 +1,6 @@
 package com.gmail.merikbest2015.ecommerce.service.Impl;
 
+import com.gmail.merikbest2015.ecommerce.controller.PaymentController;
 import com.gmail.merikbest2015.ecommerce.domain.Order;
 import com.gmail.merikbest2015.ecommerce.domain.OrderItem;
 import com.gmail.merikbest2015.ecommerce.domain.Perfume;
@@ -74,11 +75,16 @@ public class OrderServiceImpl implements OrderService {
         order.getOrderItems().addAll(orderItemList);
         orderRepository.save(order);
 
+
+
         String subject = "Order #" + order.getId();
         String template = "order-template";
         Map<String, Object> attributes = new HashMap<>();
         attributes.put("order", order);
         mailSender.sendMessageHtml(order.getEmail(), subject, template, attributes);
+        System.out.print("order" + order.getId());
+        PaymentController paymentController = new PaymentController();
+//        paymentController.createPayment(order.getTotalPrice());
         return order;
     }
 
