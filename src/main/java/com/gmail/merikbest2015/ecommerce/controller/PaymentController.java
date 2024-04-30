@@ -34,7 +34,7 @@ public class PaymentController {
         vnp_Params.put("vnp_Version", vnp_Version);
         vnp_Params.put("vnp_Command", vnp_Command);vnp_Params.put("vnp_TmnCode", vnp_TmnCode);
         vnp_Params.put("vnp_Amount", String.valueOf(a));
-        vnp_Params.put("vnp_CurrCode", "VND");
+        vnp_Params.put("vnp_CurrCode", "USD");
 //        vnp_Params.put("vnp_BankCode", "Techcombank");
 
 //        String bank_code = req.getParameter("bankcode");
