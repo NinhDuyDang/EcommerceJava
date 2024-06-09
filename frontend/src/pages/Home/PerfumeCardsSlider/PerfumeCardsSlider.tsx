@@ -1,12 +1,12 @@
-import React, { FC, ReactElement, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Carousel, Typography } from "antd";
+import { FC, ReactElement, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { selectPerfumes } from "../../../redux-toolkit/perfumes/perfumes-selector";
-import { fetchPerfumesByIds } from "../../../redux-toolkit/perfumes/perfumes-thunks";
 import { resetPerfumesState } from "../../../redux-toolkit/perfumes/perfumes-slice";
-import PerfumeCardsSliderItem from "./PerfumeCardsSliderItem/PerfumeCardsSliderItem";
+import { fetchPerfumesByIds } from "../../../redux-toolkit/perfumes/perfumes-thunks";
 import "./PerfumeCardsSlider.css";
+import PerfumeCardsSliderItem from "./PerfumeCardsSliderItem/PerfumeCardsSliderItem";
 
 export const perfumesIds = [26, 43, 46, 106, 34, 76, 82, 85, 27, 39, 79, 86];
 

@@ -1,6 +1,6 @@
-import React, { FC, ReactElement } from "react";
 import { FacebookOutlined, LinkedinOutlined, TwitterOutlined } from "@ant-design/icons";
 import { Col, Row, Typography } from "antd";
+import { FC, ReactElement } from "react";
 
 import "./Footer.scss";
 

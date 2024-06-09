@@ -1,5 +1,5 @@
-import React, { FC, ReactElement } from "react";
 import { Carousel } from "antd";
+import { FC, ReactElement } from "react";
 import { Link } from "react-router-dom";
 
 import { PRODUCT } from "../../../constants/routeConstants";

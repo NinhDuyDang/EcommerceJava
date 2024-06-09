@@ -1,6 +1,6 @@
-import React, { FC, ReactElement } from "react";
-import { Link } from "react-router-dom";
 import { Col, Row } from "antd";
+import { FC, ReactElement } from "react";
+import { Link } from "react-router-dom";
 
 import { MENU } from "../../../constants/routeConstants";
 import "./HomePageTheme.css";

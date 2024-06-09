@@ -28,7 +28,7 @@ const NavBar: FC = (): ReactElement => {
             </div>
             <Affix>
                 <div className={"navbar-wrapper"}>
-                    <Row style={{ padding: "0px 400px" }}>
+                    <Row style={{ padding: "0px 100px"}}>
                         <Col span={12}>
                             <ul>
                                 <Link to={BASE}>

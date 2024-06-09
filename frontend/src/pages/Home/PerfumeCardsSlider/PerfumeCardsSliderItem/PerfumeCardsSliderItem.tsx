@@ -1,5 +1,5 @@
-import React, { FC, ReactElement } from "react";
 import { Row } from "antd";
+import { FC, ReactElement } from "react";
 
 import PerfumeCard from "../../../../components/PerfumeCard/PerfumeCard";
 import { PerfumeResponse } from "../../../../types/types";
