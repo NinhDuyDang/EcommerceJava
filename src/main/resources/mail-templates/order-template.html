@@ -25,12 +25,12 @@
             background-color: #dee2e6;
             height: 1px;
         }
-        .checkout {
-            background-color: black;
-            color: #C58940;
-            border-radius: 12px;
-            padding: 16px;
-        }
+        /*.checkout {*/
+        /*    background-color: black;*/
+        /*    color: #C58940;*/
+        /*    border-radius: 12px;*/
+        /*    padding: 16px;*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -90,7 +90,7 @@
             <hr/>
             <h3>Total price: $ <span th:text="${order.getTotalPrice()}" th:remove="tag"></span></h3>
             <span style="margin-top: 16px; display: flex; justify-content: center;">
-                <button class="checkout" type="submit" onclick="handleCheckout()">Check out!</button>
+<!--                <button class="checkout" type="submit" onclick="handleCheckout()">Check out!</button>-->
             </span>
         </td>
     </tr>
