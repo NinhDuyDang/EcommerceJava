@@ -23,9 +23,9 @@ const NavBar: FC = (): ReactElement => {
 
     return (
         <>
-            <div className={"navbar-logo-wrapper"}>
+            {/* <div className={"navbar-logo-wrapper"}>
                 <img alt={"navbar-logo"} src="https://i.ibb.co/pJ1pPBp/test.png" />
-            </div>
+            </div> */}
             <Affix>
                 <div className={"navbar-wrapper"}>
                     <Row style={{ padding: "0px 100px"}}>
